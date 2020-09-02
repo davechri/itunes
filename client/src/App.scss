@@ -1,0 +1,26 @@
+// Use the gray 100 theme
+@import '@carbon/themes/scss/themes.scss';
+
+//$carbon--theme: $carbon--theme--g100;
+@include carbon--theme();
+
+@import 'carbon-components/scss/globals/scss/_colors';
+@import 'carbon-components/scss/components/accordion/_accordion';
+@import 'carbon-components/scss/components/button/_button';
+@import 'carbon-components/scss/components/code-snippet/_code-snippet';
+@import 'carbon-components/scss/components/checkbox/_checkbox';
+@import 'carbon-components/scss/components/content-switcher/_content-switcher';
+@import 'carbon-components/scss/components/dropdown/_dropdown';
+@import 'carbon-components/scss/components/loading/_loading';
+@import 'carbon-components/scss/components/modal/_modal';
+@import 'carbon-components/scss/components/overflow-menu/_overflow-menu';
+@import 'carbon-components/scss/components/radio-button/_radio-button';
+@import 'carbon-components/scss/components/tabs/_tabs';
+@import 'carbon-components/scss/components/toggle/_toggle';
+@import 'carbon-components/scss/components/tooltip/_tooltip';
+@import 'carbon-components/scss/components/search/_search';
+@import 'carbon-components/scss/components/structured-list/_structured-list';
+
+html, body {
+  overflow: hidden;
+}
