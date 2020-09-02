@@ -69,6 +69,7 @@ export default class Layout extends React.Component {
     // Enter key pressed?
     if(e.keyCode === 13) {
       if(e.target.value.length > 0) {
+        console.log(e.target.value);
         this.searchMusic(e.target.value);
       }
     }
@@ -89,7 +90,7 @@ export default class Layout extends React.Component {
         }
         return true;
       })}, error => {
-        console.log(error);
+        //console.log(error);
       })
     })
     .catch(error => {
