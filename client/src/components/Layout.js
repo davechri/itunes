@@ -77,7 +77,8 @@ export default class Layout extends React.Component {
   searchMusic(artist) {
     Fetch.GET('search', {
       term: artist,
-      media: 'music'
+      media: 'music',
+      limit: 50
     })
     .then(json => {
       const words = artist.split(' ');

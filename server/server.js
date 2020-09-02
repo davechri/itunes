@@ -7,11 +7,19 @@ const fs = require('fs')
 const os = require('os')
 var URL = require('url').URL;
 
+const DEFAULT_URL = 'https://itunes.apple.com';
+
 const app = express();
 
 require('dotenv').config({path:`${process.cwd()}/.env`}); // read .env file
 
 // Get the iTunes search URL
+
+// URL is not set in .env file?
+if(process.env.ITUNES_URL === undefined || process.env.ITUNES_URL.length === 0) {
+    process.env.ITUNES_URL = DEFAULT_URL; // use default
+}
+
 let url;
 try {
     url = new URL(process.env.ITUNES_URL);
@@ -24,11 +32,6 @@ catch(e) {
 // When deployed locally, disable certificate verification
 if(url.host.includes('localhost')) {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-}
-
-if(process.env.ITUNES_URL === undefined || process.env.ITUNES_URL.length === 0) {
-    console.error('The ITUNES_URL variable is not defined in the .env file.');
-    return;
 }
 
 const host = url.protocol+'//'+url.host;
