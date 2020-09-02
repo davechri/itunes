@@ -1,0 +1,7 @@
+applications:
+  - name: itunes-music
+    command: node server/server.js
+    memory: 256M
+    env:
+      NPM_CONFIG_PRODUCTION: true
+      NODE_ENV: production
