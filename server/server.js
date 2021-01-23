@@ -69,7 +69,7 @@ const server = app.listen(port, async () => {
     console.log('Server listening on port ' + port);    
 
     console.log('iTunes API url: '+url.href+'search');
-    fetch(url.href)
+    fetch(url.href+'search')
     .then((res) => {
         if(res.ok) {           
             console.log('Successfully contacted iTunes search API');           
